@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>onhover</title>
+  </head>
+  <style>
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+} 
+body {
+  width: 100vw;
+  height: 100vh;
+  background:  #d9d9d9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bars {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: rgba(17, 17, 26, 0.1)
+   0px 4px 16px rgba(17, 17, 26, 0.1) 0px 8px
+    24px rgba(17, 17, 26, 0.1)
+     0px 16px 56px;
+  cursor: pointer;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;}
+.bar {
+  position: absolute;
+  width: 70px;
+  height: 10px;
+  background: #8e44ad;
+  border-radius: 4px;
+  transition: 0.5s;
+}
+.bar-1 {
+  transform: translateY(-25px);
+  width: 50%;
+  left: 15px;
+}
+.bar-3 {
+  transform: translateY(25px);
+  width: 30%;
+  left: 15px;
+}
+.bars.active .bar-1 {
+  width: 70px;
+  transform: translateY(0px) rotate(45deg);
+}
+.bars.active .bar-2 {
+  transform: translateX(100px);
+}
+.bars.active .bar-3 {
+  width: 70px;
+  transform: translateY(0px) rotate(315deg);
+}
+
+
+  </style>
+  <body>
+  
+
+    <div class="bars">
+      <div class="bar bar-1"></div>
+       <div class="bar bar-2"></div>
+      <div class="bar bar-3"></div>
+       </div>
+
+    <script>
+
+let menuBar = document.querySelector('.bars');
+            menuBar.onclick = ()=> {menuBar.classList.toggle('active');
+            }
+      </script>
+
+  </body>
+</html>
